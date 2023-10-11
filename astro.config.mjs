@@ -7,6 +7,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Конспект",
+      favicon: "/images/favicon.ico",
       social: {
         github: "https://github.com/withastro/starlight",
       },
@@ -17,6 +18,10 @@ export default defineConfig({
         },
       },
       sidebar: [
+        {
+          label: "Django",
+          autogenerate: { directory: "django" },
+        },
         {
           label: "Guides",
           items: [
