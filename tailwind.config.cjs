@@ -13,6 +13,10 @@ module.exports = {
         // Your preferred gray scale. Zinc is closest to Starlight’s defaults.
         gray: colors.slate,
       },
+      screens: {
+        xs: "340px",
+        "3xl": "1920px",
+      },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
         serif: ["Bitter", ...defaultTheme.fontFamily.serif],

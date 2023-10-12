@@ -7,6 +7,11 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Конспект",
+      // logo: {
+      //   src: "./src/assets/light-logo.svg",
+      //   light: "./src/assets/light-logo.svg",
+      //   dark: "./src/assets/dark-logo.svg"
+      // },
       favicon: "/images/favicon.ico",
       social: {
         github: "https://github.com/withastro/starlight",
