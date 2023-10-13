@@ -14,7 +14,11 @@ export default defineConfig({
       // },
       favicon: "/images/favicon.ico",
       social: {
-        github: "https://github.com/withastro/starlight",
+        github: "https://github.com/landing-russia/starlight",
+      },
+      lastUpdated: true,
+      editLink: {
+        baseUrl: 'https://github.com/landing-russia/starlight/edit/main/',
       },
       locales: {
         root: {
