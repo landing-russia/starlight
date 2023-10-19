@@ -42,6 +42,10 @@ export default defineConfig({
           label: "Reference",
           autogenerate: { directory: "reference" },
         },
+        {
+          label: "Trash",
+          autogenerate: { directory: "trash" },
+        },
       ],
       customCss: [
         "./src/tailwind.css",
