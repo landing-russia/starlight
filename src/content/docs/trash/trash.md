@@ -29,3 +29,4 @@ description: Потом разберу
 - [Create Personal MDX Blog using Next js13 | Learn to Build Next.js Blog | Nextjs Tutorial](https://www.youtube.com/watch?v=pqmij7wTgqc)
 - [How to code an MDX Blog / NextJS 13 / Contentlayer / Rehype Remark Plugins](https://www.youtube.com/watch?v=WDLnzPFBEYo)
 - [Build GitHub Homepage Clone Using NextJs and Tailwind CSS (Part 1: Navbar) | Next Js Project](https://www.youtube.com/watch?v=Pz-UhnoSsm4)
+- [Интернет магазин с нуля до деплоя на: Nest.js + MariaDB/MySQL + Next.js + Effector.js + ЮKassa](https://www.youtube.com/watch?v=qK1ENlEucpc)
