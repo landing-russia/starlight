@@ -30,3 +30,4 @@ description: Потом разберу
 - [How to code an MDX Blog / NextJS 13 / Contentlayer / Rehype Remark Plugins](https://www.youtube.com/watch?v=WDLnzPFBEYo)
 - [Build GitHub Homepage Clone Using NextJs and Tailwind CSS (Part 1: Navbar) | Next Js Project](https://www.youtube.com/watch?v=Pz-UhnoSsm4)
 - [Интернет магазин с нуля до деплоя на: Nest.js + MariaDB/MySQL + Next.js + Effector.js + ЮKassa](https://www.youtube.com/watch?v=qK1ENlEucpc)
+- [NextJs Portfolio Tutorial - Build a Responsive Portfolio Website w/ Advanced Animations (2023)](https://www.youtube.com/watch?v=Kb1f5bvF6f4)
