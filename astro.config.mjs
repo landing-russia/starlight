@@ -18,7 +18,7 @@ export default defineConfig({
       },
       lastUpdated: true,
       editLink: {
-        baseUrl: 'https://github.com/landing-russia/starlight/edit/main/',
+        baseUrl: "https://github.com/landing-russia/starlight/edit/main/",
       },
       locales: {
         root: {
@@ -27,6 +27,10 @@ export default defineConfig({
         },
       },
       sidebar: [
+        {
+          label: "Git",
+          autogenerate: { directory: "git" },
+        },
         {
           label: "Django",
           autogenerate: { directory: "django" },
