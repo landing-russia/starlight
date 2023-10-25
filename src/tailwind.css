@@ -11,4 +11,8 @@
   h6 {
     @apply font-serif font-bold;
   }
+
+  body {
+    @apply font-sans;
+  }
 }
