@@ -5,6 +5,8 @@ description: Astro video cuts for research.
 
 ## Keystatic with Astro's Content Collections
 
+[Keystatic with Astro's Content Collections (YOUTUBE)](https://www.youtube.com/watch?v=6l2YWCyPsWk)
+
 ![keystatic-01](@assets/images/astro/keystatic-01.jpg)
 ![keystatic-02](@assets/images/astro/keystatic-02.jpg)
 ![keystatic-03](@assets/images/astro/keystatic-03.jpg)
@@ -47,3 +49,6 @@ description: Astro video cuts for research.
 ![keystatic-40](@assets/images/astro/keystatic-40.jpg)
 ![keystatic-41](@assets/images/astro/keystatic-41.jpg)
 ![keystatic-42](@assets/images/astro/keystatic-42.jpg)
+
+## Codebase Editing With Minimal Footprint — Keystatic in Production
+
