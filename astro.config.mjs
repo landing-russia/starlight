@@ -36,6 +36,10 @@ export default defineConfig({
           autogenerate: { directory: "django" },
         },
         {
+          label: "Astro",
+          autogenerate: { directory: "astro" },
+        },
+        {
           label: "Guides",
           items: [
             // Each item here is one entry in the navigation menu.
