@@ -1,0 +1,29 @@
+---
+const items = [
+  { path: "/", name: "Home" },
+  { path: "/blog", name: "Blog" },
+  { path: "/about", name: "About" },
+  { path: "/products", name: "Products" },
+]
+---
+
+<header
+  class="pl-1 pr-4 pt-4 pb-3 bg-white dark:bg-gray-800 border-b border-transparent dark:border-gray-800 flex items-center justify-between shadow dark:shadow-lg"
+>
+  <a
+    href="/"
+    class="text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-1.5 leading-none rounded-xl text-2xl font-extrabold font-serif"
+    >Конспект</a
+  >
+  <nav class="flex items-center space-x-4">
+    <ul class="hidden list-none lg:flex items-center space-x-4">
+      {
+        items.map((item) => (
+          <li>
+            <a href={item.path} class="text-gray-500 dark:text-gray-200 font-semibold px-3 py-2 leading-none hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl">{item.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,5 @@
+<div
+  class="bg-gray-200 dark:bg-gray-800 text-gray-500 text-center shadow-inner w-full mx-auto px-4 py-5"
+>
+  <span class="font-semibold">Footer</span>
+</div>
