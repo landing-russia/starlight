@@ -7,6 +7,138 @@ description: Astro video cuts for research.
 
 [Keystatic with Astro's Content Collections (YOUTUBE)](https://www.youtube.com/watch?v=6l2YWCyPsWk)
 
+
+```js
+// keystatic.config.tsx
+
+export default config({
+  storage,
+  collections: {
+    tags: collection({
+      label: 'Tags',
+      path: 'src/content/tags/*',
+      slugField: 'name',
+      format: {
+        data: 'yaml',
+        contentField: 'markdoc',
+      },
+      schema: {
+        markdoc: fields.emptyDocument(),
+        name: fields.slug({name: {label: 'Name'}}) // не точно
+      }
+    }),
+
+    authors: collection({
+      label: 'Authors',
+      path: 'src/content/authors/*',
+      slugField: 'name',
+      format: {
+        data: 'yaml',
+        contentField: 'markdoc',
+      },
+      schema: {
+        markdoc: fields.emptyDocument(),
+        name: fields.slug({name: {label: 'Author name'}}),
+        avatar: fields.image({
+          label: 'Avatar',
+          directory: '/src/images/avatars',
+          publicPath: '/src/images/avatars/',
+        })
+      }
+    }),
+    blog: collection({
+      label: 'Blog Posts',
+      path: 'src/content/blog/*/',
+      slugField: 'title',
+      format: {
+        data: 'yaml',
+        contentField: '_content',
+      },
+      schema: {
+        title: fields.slug({name: {label: 'Title'}}),
+        draft: fields.checkbox({
+          label: 'Draft',
+          defaultValue: false
+        }),
+        publishedOn: fields.date({label: 'Published On'}),
+        summary: fields.text({label: 'Summary', multiline: true}),
+        authors: fields.array(
+          fields.relationship({label: 'Author', collection: 'authors'}),
+          {
+            label: 'Authors',
+            itemLabel: (props) => props.value ?? 'Please select',
+          }
+        ),
+        tags: fields.array(
+          fields.relationship({label: 'Tag', collection: 'tags'}),
+          {
+            label: 'Tags',
+            itemLabel: (props) => props.value ?? 'Please select',
+          }
+        ),
+        _content: fields.document({
+          label: 'Content',
+          links: true,
+          images: {
+            directory: 'src/content/blog/*/_images',
+            publicPath: '/src/content/blog/_images/',
+          },
+          dividers: true,
+          formatting: true,
+          tables: true,
+          componentBlocks: {
+            imageWithCaption: component({
+              label: 'Image with caption',
+              schema: {
+                src: fields.image({
+                  label: 'Image',
+                  directory: 'src/content/blog/_images',
+                  publicPath: '/src/content/blog/_images/',
+                }),
+                alt: fields.text({label: 'Alt text'}),
+                caption: fields.text({label: 'Caption', multiline: true}),
+              },
+              preview: () => null,
+            }),
+            videoGif: component({
+              label: 'Looping video',
+              schema: {
+                src: fields.pathReference({
+                  label: 'Path to video',
+                  description: 'The path relative to the /public directory'
+                }),
+                caption: fields.text({label: 'Caption', multiline: true}),
+              },
+              preview: () => null,
+            })
+          }
+        })
+      }
+    })
+  }
+})
+
+```
+
+```js
+// tags.mdoc (tags collection)
+
+---
+name: Labs
+---
+```
+
+```js
+// ben-derham.mdoc (authors collection)
+
+---
+name: Ben Derham
+avatar: '/scr/images/avatars/ben-derham/avatar.jpg'
+twitterLink: benderham88
+bio: ''
+---
+```
+
 ![keystatic-01](@assets/images/astro/keystatic-01.jpg)
 ![keystatic-02](@assets/images/astro/keystatic-02.jpg)
 ![keystatic-03](@assets/images/astro/keystatic-03.jpg)
