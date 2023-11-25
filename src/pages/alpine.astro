@@ -1,5 +1,5 @@
 ---
-import Counter from "@components/Counter.astro";
+import Counter from "@components/Counter.astro"
 ---
 
 <!doctype html>
@@ -10,10 +10,170 @@ import Counter from "@components/Counter.astro";
     <title>Alpine js</title>
   </head>
   <body>
-    <h1>Alpine js</h1>
+    <a href="/alpine/alpine-js-full-course-for-beginners/"><h1>Alpine js</h1></a>
     <Counter />
+    <h2>x-data, x-text, x-html</h2>
+    <div x-data="{name: 'Zura', message: 'Hello <b>World</b>' }">
+      <p x-text="name"></p>
+      <p x-html="message"></p>
+    </div>
+    <div
+      x-data
+      x-text="await (await fetch('https://jsonplaceholder.typicode.com/todos/1')).text()"
+    >
+    </div>
+    <h2>x-data with methods</h2>
+    <div
+      x-data="{message: 'Click me to change', change(){ this.message = 'Change message' } }"
+    >
+      <span x-html="message" @click="change()"></span>
+    </div>
+    <h2>Re-usable Data</h2>
+    <div x-data="dropdown">
+      <button @click="toggle">Open/Close</button>
+      <div x-show="open" x-text="message"></div>
+    </div>
+    <h2>Data-Less components</h2>
+    <div x-data @click="alert('Something')">Click me</div>
+    <h2>Data coming from Store</h2>
+    <div x-data x-text="$store.currentUser.username"></div>
+    <h2>x-init</h2>
+    <div x-init="console.log('Init')"></div>
+    <div
+      x-data="{
+        init(){
+            console.log('I am initialized')
+        }
+    }"
+    >
+    </div>
+    <div
+      x-data="{todo: {}}"
+      x-init="todo = await (await fetch('https://jsonplaceholder.typicode.com/todos/1')).json()"
+    >
+      <span x-text="`Todo ID: `+todo.id"></span>
+    </div>
+    <h2>Scoping</h2>
+    <div
+      x-data="{
+        name: 'John', 
+        gender: 'male',
+        age: 30
+    }"
+    >
+      <div x-data="{name: 'Mary', age: 25}">
+        <div x-data="{name: 'Zura'}">
+          <span x-text="name"></span>
+        </div>
+      </div>
+    </div>
+    <h2>Getters & Setters</h2>
+    <div
+      x-data="{
+        open: false,
+        get isOpen() {
+            return this.open;
+        },
+        set isOpen(open) {
+            this.open = open
+        },
+        toggle() {
+            this.isOpen = !this.isOpen;
+        }
+    }"
+    >
+      <button @click="toggle">Open/Close</button>
+      <div x-show="open">Content</div>
+    </div>
+
+    <h2>x-show & x-transition</h2>
+    <div x-data="{ open: false }">
+      <button x-on:click="open = ! open">Open/Close</button>
+
+      <div
+        x-show="open"
+        x-transition:enter.duration.200ms
+        x-transition:leave.duration.2000ms
+      >
+        Content
+      </div>
+    </div>
+
+    <h2>x-if</h2>
+    <div x-data="{ open: false }">
+      <button x-on:click="open = ! open">Open/Close</button>
+
+      <template x-if="open">
+        <div>Content</div>
+      </template>
+    </div>
+
+    <h2>x-for</h2>
+    <div
+      x-data="{
+        posts: [{id: 1, title: 'title 1'}, {id: 2, title: 'title 2'}]
+    }"
+    >
+      <template x-for="(post, index) in posts" :key="post.id">
+        <h3 x-text="post.id + '. ' + post.title"></h3>
+      </template>
+    </div>
+
+    <h2>x-for in range</h2>
+    <div x-data>
+      <template x-for="n in 10">
+        <p x-text="n"></p>
+      </template>
+    </div>
+
+    <h2>x-bind: class</h2>
+    <div x-data="{clicked: false}">
+      <button
+        class="red"
+        :class="clicked ? 'clicked' : ''"
+        @click="clicked = !clicked"
+      >
+        Click me
+      </button>
+    </div>
+    <div x-data="{clicked: false}">
+      <button class="yellow" :class="{clicked}" @click="clicked = !clicked">
+        Click me
+      </button>
+    </div>
+    <style>
+      .red {
+        background-color: red;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .clicked {
+        background-color: green;
+      }
+    </style>
+
+    <br />
+    <br />
+    <br />
+
     <script>
       import Alpine from "alpinejs"
+      document.addEventListener("alpine:init", () => {
+        Alpine.data("dropdown", () => ({
+          open: false,
+          message: "Something",
+
+          toggle() {
+            this.open = !this.open
+          },
+        }))
+
+        Alpine.store("currentUser", {
+          username: "TheCodeholic",
+          posts: ["Post1", "Post2"],
+        })
+      })
       Alpine.start()
     </script>
   </body>

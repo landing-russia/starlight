@@ -41,6 +41,10 @@ export default defineConfig({
           autogenerate: { directory: "astro" },
         },
         {
+          label: "Alpine",
+          autogenerate: { directory: "alpine" },
+        },
+        {
           label: "Guides",
           items: [
             // Each item here is one entry in the navigation menu.
