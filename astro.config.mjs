@@ -45,6 +45,10 @@ export default defineConfig({
           autogenerate: { directory: "alpine" },
         },
         {
+          label: "TailwindCSS",
+          autogenerate: { directory: "tailwindcss" },
+        },
+        {
           label: "Guides",
           items: [
             // Each item here is one entry in the navigation menu.
