@@ -13,3 +13,5 @@ description: Alpine.js Tools
 
 [A free repository for community components using Tailwind CSS](https://tailwindcomponents.com/)
 
+[Flickering screen with Dark Mode in Astro](https://dev.to/maiobarbero/flickering-screen-with-dark-mode-in-astro-1mlo)
+
