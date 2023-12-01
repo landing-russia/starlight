@@ -1,6 +1,6 @@
 ---
-title: Astro video cuts
-description: Astro video cuts for research.
+title: Keystatic with Astro's Content Collections
+description: Keystatic with Astro's Content Collections
 ---
 
 ## Keystatic with Astro's Content Collections
