@@ -15,3 +15,5 @@ description: Alpine.js Tools
 
 [Flickering screen with Dark Mode in Astro](https://dev.to/maiobarbero/flickering-screen-with-dark-mode-in-astro-1mlo)
 
+[How To Create A Light And Dark Mode With TailwindCss and AlpineJS](https://www.youtube.com/watch?v=4niBH4paQ6s)
+
